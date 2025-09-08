@@ -1,3 +1,4 @@
+<code>
 # 🤖 AI Support Agent
 
 An AI-powered customer support agent built with **LangChain + LangGraph + Streamlit**.
@@ -9,3 +10,4 @@ An AI-powered customer support agent built with **LangChain + LangGraph + Stream
 - Works in **CLI** or **Web App (Streamlit)**
 
 ## 📂 Project Structure
+</code>
