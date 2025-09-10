@@ -3,7 +3,7 @@
 An AI-powered customer support assistant built with LangChain, LangGraph, and Streamlit.
 It can answer FAQs, handle order tracking, and simulate a real support chat experience.
 
-🌐  [👉 Try the Live Demo]([https://your-username-ai-support-agent.streamlit.app](https://ai-support-agent-hyffzzbpkqcfgmsucgwqfn.streamlit.app/))
+🌐  [👉 Try the Live Demo](https://ai-support-agent-hyffzzbpkqcfgmsucgwqfn.streamlit.app/)
 
 🚀 Features
 
