@@ -1,24 +1,21 @@
 🤖 AI Support Agent
 
+An AI-powered customer support assistant built with LangChain, LangGraph, and Streamlit.
+It can answer FAQs, handle order tracking, and simulate a real support chat experience.
 
+🌐  [👉 Try the Live Demo]([https://your-username-ai-support-agent.streamlit.app](https://ai-support-agent-hyffzzbpkqcfgmsucgwqfn.streamlit.app/))
 
-An AI-powered customer support agent built with LangChain + LangGraph + Streamlit.
+🚀 Features
 
+✅ Answers FAQs from a JSON knowledge base
 
+✅ Tracks order status by extracting Order IDs from queries
 
+✅ Remembers conversation context with memory
 
-✨ Features
+✅ Deployable as a Streamlit web app
 
-Answers FAQs from a JSON knowledge base
-
-Handles order tracking queries (mock system)
-
-Falls back gracefully for unknown questions
-
-Works in both CLI and Web App (Streamlit)
-
-Easily extensible with new tools
-
+✅ Example of an AI Agent with tool use
 
 
 
