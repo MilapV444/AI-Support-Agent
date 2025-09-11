@@ -5,6 +5,11 @@ It can answer FAQs, handle order tracking, and simulate a real support chat expe
 
 🌐  [👉 Try the Live Demo](https://ai-support-agent-hyffzzbpkqcfgmsucgwqfn.streamlit.app/)
 
+## 🖼️ Demo Screenshot  
+
+![Demo Screenshot](demo.png)
+
+
 🚀 Features
 
 ✅ Answers FAQs from a JSON knowledge base
