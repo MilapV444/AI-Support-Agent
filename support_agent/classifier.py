@@ -10,7 +10,8 @@ Query: {query}
 Class:
 """)
 
+chain = prompt | llm
+
 def classify_query(query: str) -> str:
-    chain = prompt | llm
-    result = llm.invoke({"query": query})
+    result = chain.invoke({"query": query})
     return result.content.strip().upper()
