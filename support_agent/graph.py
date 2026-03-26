@@ -3,7 +3,7 @@ from support_agent.state import AgentState
 from support_agent.classifier import classify_query
 from support_agent.tools import faq_tool, order_tracking_tool
 
-def route_query(state: AgentState) -> str:
+def route_query(state: AgentState) -> AgentState:
     query = state["query"]
     category = classify_query(query)
 
