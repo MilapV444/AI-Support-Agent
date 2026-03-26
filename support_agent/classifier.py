@@ -1,7 +1,7 @@
 from langchain_openai import ChatOpenAI
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 prompt = PromptTemplate.from_template("""
 You are a query classifier. 
@@ -11,5 +11,6 @@ Class:
 """)
 
 def classify_query(query: str) -> str:
-    result = llm.invoke(prompt.format(query=query))
+    chain = prompt | llm
+    result = llm.invoke({"query": query})
     return result.content.strip().upper()
