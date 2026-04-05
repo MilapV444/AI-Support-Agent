@@ -1,23 +1,30 @@
-import streamlit as st
+from fastapi import FastAPI
+from pydantic import BaseModel
 from support_agent.graph import build_graph
 
-st.set_page_config(page_title="AI Support Agent", page_icon="🤖")
+app = FastAPI()
 
-st.title("🤖 AI Support Agent")
-st.write("Ask me about orders, shipping, or support.")
+graph = build_graph()
 
-if "graph" not in st.session_state:
-    st.session_state.graph = build_graph()
+class QueryRequest(BaseModel):
+    query: str
 
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []
+@app.get("/")
+def home():
+    return {"message": "AI Support Agent API is running"}
 
-query = st.text_input("Customer:", "")
+@app.post("/chat")
+def chat(request: QueryRequest):
+    print("Received query:", request.query)  # 👈 ADD THIS
 
-if st.button("Send") and query:
-    result = st.session_state.graph.invoke({"query": query, "response": ""})
-    st.session_state.chat_history.append(("Customer", query))
-    st.session_state.chat_history.append(("Support Agent", result["response"]))
-
-for speaker, text in st.session_state.chat_history:
-    st.write(f"**{speaker}:** {text}")
+    try:
+        result = graph.invoke({
+            "query": request.query,
+            "response": ""
+        })
+        print("Response:", result["response"])  # 👈 ADD THIS
+        return {"response": result["response"]}
+    
+    except Exception as e:
+        print("ERROR:", str(e))  # 👈 IMPORTANT
+        return {"response": f"Error: {str(e)}"}
